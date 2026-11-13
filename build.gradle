@@ -2,7 +2,7 @@ plugins {
     id 'net.fabricmc.fabric-loom' version '1.17-SNAPSHOT'
 }
 
-version = '1.2.7+26.3'
+version = '1.2.8+26.3'
 group = 'br.com.gamerhause'
 
 // Keep local builds writable when an earlier privileged build owns build/.

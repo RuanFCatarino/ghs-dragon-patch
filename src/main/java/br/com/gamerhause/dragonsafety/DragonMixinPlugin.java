@@ -17,6 +17,10 @@ public final class DragonMixinPlugin implements IMixinConfigPlugin {
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
         if (mixinClassName.endsWith("SkywyrmsFlightStateMixin"))
             return FabricLoader.getInstance().isModLoaded("skywyrms");
+        if (mixinClassName.endsWith("PetTargetMouseMixin")
+                || mixinClassName.endsWith("PetTargetKeyMappingMixin")
+                || mixinClassName.endsWith("KeyMappingClickAccessor"))
+            return FabricLoader.getInstance().isModLoaded("petcompanions");
         if (mixinClassName.endsWith("ClientFlyingDragonBoostMixin")
                 || mixinClassName.endsWith("FlyingDragonBoostMixin"))
             return FabricLoader.getInstance().isModLoaded("uselessreptile");

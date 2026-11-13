@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "id": "ghs_dragon_safety",
-  "version": "1.2.7+26.3",
+  "version": "1.2.8+26.3",
   "name": "GHS Dragon Patch",
-  "description": "Complemento GHS para Skywyrms e Useless Reptile: controles de voo, descida segura e correcoes de compatibilidade. Cada integracao funciona somente quando o respectivo mod esta instalado.",
+  "description": "Complemento GHS para Skywyrms e Useless Reptile: controles de voo, descida segura e correcoes de compatibilidade. Shift + clique da rodinha marca alvos do Pet Companions sem acionar o Ping Wheel. Cada integracao funciona somente quando o respectivo mod esta instalado.",
   "icon": "assets/ghs_dragon_safety/icon.png",
   "authors": ["Gamer Hause Server"],
   "environment": "*",
