@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "package": "br.com.gamerhause.dragonsafety.mixin",
+  "plugin": "br.com.gamerhause.dragonsafety.DragonMixinPlugin",
+  "compatibilityLevel": "JAVA_25",
+  "client": ["KeyboardInputMixin", "ClientFlyingDragonBoostMixin", "SkywyrmsFlightStateMixin", "DragonScreenVisualResetMixin", "CrawlAndMinimapKeyMixin"],
+  "server": ["FlyingDragonBoostMixin"],
+  "injectors": {"defaultRequire": 1}
+}

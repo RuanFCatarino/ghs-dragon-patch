@@ -1,0 +1,45 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version '1.17-SNAPSHOT'
+}
+
+version = '1.2.7+26.3'
+group = 'br.com.gamerhause'
+
+// Keep local builds writable when an earlier privileged build owns build/.
+if (System.getenv('GHS_BUILD_DIR')) {
+    layout.buildDirectory = file(System.getenv('GHS_BUILD_DIR'))
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    minecraft 'com.mojang:minecraft:26.3'
+    implementation 'net.fabricmc:fabric-loader:0.19.5'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 25
+    options.encoding = 'UTF-8'
+}
+
+// The behavior checks below are executable Java mains, not JUnit tests.
+tasks.named('test') {
+    failOnNoDiscoveredTests = false
+}
+
+// These dependency-free behavior checks run as Java mains, not JUnit tests.
+tasks.register('verifyDragonControls', JavaExec) {
+    dependsOn tasks.named('testClasses')
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'br.com.gamerhause.dragonsafety.api.DragonDismountStateTest'
+}
+tasks.register('verifyCrawlControls', JavaExec) {
+    dependsOn tasks.named('testClasses')
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'br.com.gamerhause.dragonsafety.api.CrawlToggleStateTest'
+}
+tasks.named('check') {
+    dependsOn tasks.named('verifyDragonControls'), tasks.named('verifyCrawlControls')
+}

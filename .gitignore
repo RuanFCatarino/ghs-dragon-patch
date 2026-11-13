@@ -1,0 +1,8 @@
+.gradle/
+.gradle-user/
+build/
+build-*/
+client-latest.log
+candidate/
+*.jar
+*.class
